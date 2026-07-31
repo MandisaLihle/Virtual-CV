@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mandisa Sithole | Portfolio</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🖍️</text></svg>">
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root{
+    --board:#F8FAFC;
+    --board-2:#FFFFFF;
+    --panel:#FFFFFF;
+    --rule:#E2E8F0;
+    --chalk:#0F172A;
+    --chalk-dim:#475569;
+    --chalk-faint:#94A3B8;
+    --yellow:#2563EB;
+    --coral:#3B82F6;
+    --blue:#2563EB;
+}
+
+*{ box-sizing:border-box; }
+
+body{
+    margin:0;
+    font-family:'Inter', sans-serif;
+    color:var(--chalk);
+    background:
+        linear-gradient(
+            135deg,
+            #F8FAFC 0%,
+            #EEF4FF 35%,
+            #DCEEFF 70%,
+            #C7E4FF 100%
+        );
+    background-attachment:fixed;
+    min-height:100vh;
+}
+
+.block-container{
+    padding:0 1.5rem 2rem;
+    max-width:1100px;
+    margin:0 auto;
+}
+
+h1,h2,h3,h4{ color:var(--chalk); font-family:'Inter', sans-serif; margin:0; }
+p, li, span, div{ color:var(--chalk-dim); }
+a{ color:var(--blue); text-decoration:none; }
+
+/* ---------- LEDGE (top bar) ---------- */
+.ledge{
+    background:var(--board-2);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:14px 26px;
+    border-bottom:3px solid var(--rule);
+    border-radius:0 0 10px 10px;
+    margin-bottom:6px;
+    flex-wrap:wrap;
+    gap:10px;
+}
+.ledge .brand{ font-family:'Inter', sans-serif; font-size:22px; color:var(--chalk); font-weight:700; }
+.ledge .brand .dot{ color:var(--yellow); }
+.status-chip{
+    font-family:'Inter', sans-serif;
+    font-size:11px;
+    color:var(--yellow);
+    border:1px dashed var(--yellow);
+    border-radius:20px;
+    padding:5px 12px;
+    white-space:nowrap;
+}
+
+/* ---------- NAV ---------- */
+.syllabus{
+    display:flex;
+    gap:2px;
+    background:var(--panel);
+    border-bottom:1px solid var(--rule);
+    border-radius:8px;
+    padding:4px;
+    margin:0 1.5rem 18px;
+    max-width:1100px;
+    margin-left:auto;
+    margin-right:auto;
+    overflow-x:auto;
+}
+.syllabus a{
+    font-family:'Inter', sans-serif;
+    font-size:12px;
+    font-weight:600;
+    color:var(--chalk-dim);
+    text-decoration:none;
+    padding:10px 16px;
+    border-radius:6px;
+    white-space:nowrap;
+}
+.syllabus a:hover{ color:var(--chalk); background:rgba(37,99,235,0.08); }
+.syllabus a .n{ color:var(--yellow); margin-right:6px; }
+
+/* ---------- SECTION WRAPPER ---------- */
+.section{
+    background:transparent;
+    padding:26px 4px 8px;
+    border-bottom:1px solid var(--rule);
+    margin-bottom:8px;
+}
+.eyebrow{
+    font-family:'Inter', sans-serif;
+    font-size:12px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--yellow);
+    margin-bottom:6px;
+}
+.section-title{
+    font-family:'Inter', sans-serif;
+    font-size:32px;
+    font-weight:800;
+    color:var(--chalk);
+    margin:0 0 22px;
+    border-bottom:3px solid var(--yellow);
+    display:inline-block;
+    padding-bottom:4px;
+}
+
+/* ---------- HERO ---------- */
+.hero-wrap{
+    display:flex;
+    gap:40px;
+    align-items:flex-start;
+    padding-top:2rem;
+    flex-wrap:wrap;
+}
+.hero-text{ flex:1.6; min-width:300px; }
+.hero-card{ flex:1; min-width:240px; }
+.hero-eyebrow{ font-family:'Inter', sans-serif; font-size:13px; color:var(--chalk-faint); letter-spacing:.15em; font-weight:600; }
+.hero-name{ font-family:'Inter', sans-serif; font-size:52px; font-weight:800; color:var(--chalk); margin:6px 0; border-bottom:4px solid var(--yellow); display:inline-block; padding-bottom:6px; }
+.hero-role{ font-family:'Inter', sans-serif; font-size:15px; font-weight:600; color:var(--blue); margin:12px 0 18px; }
+.hero-text p{ max-width:540px; font-size:16px; }
+
+.id-card{
+    border:1.5px dashed var(--chalk-faint);
+    border-radius:12px;
+    padding:22px 18px;
+    text-align:center;
+    background:var(--panel);
+}
+.id-photo{
+    width:90px;height:90px;border-radius:50%;
+    margin:0 auto 12px;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Inter', sans-serif; font-size:30px; font-weight:700; color:var(--yellow);
+    background:var(--board-2);
+    border:2px solid var(--rule);
+}
+.id-card .name{ font-family:'Inter', sans-serif; font-size:17px; font-weight:700; color:var(--chalk); margin-bottom:2px; }
+.id-card .role{ font-family:'Inter', sans-serif; font-size:10px; color:var(--chalk-faint); margin-bottom:12px; }
+.id-meta{ font-family:'Inter', sans-serif; font-size:10.5px; color:var(--chalk-dim); text-align:left; border-top:1px dashed var(--rule); padding-top:10px; }
+.id-meta div{ display:flex; justify-content:space-between; margin-bottom:4px; }
+.id-meta b{ color:var(--chalk-faint); font-weight:400; }
+
+/* ---------- BUTTONS ---------- */
+.btn{
+    font-family:'Inter', sans-serif;
+    font-size:13px;
+    font-weight:600;
+    background:transparent;
+    color:var(--chalk);
+    border:1.5px dashed var(--chalk-faint);
+    border-radius:8px;
+    padding:10px 18px;
+    display:inline-block;
+    cursor:pointer;
+    margin-top:14px;
+}
+.btn:hover{
+    background:#2563EB;
+    color:white;
+    border-color:#2563EB;
+}
+
+/* ---------- STAT ROSTER ---------- */
+.roster{ display:flex; gap:1px; background:var(--rule); border:1px solid var(--rule); border-radius:10px; overflow:hidden; margin-top:24px; max-width:540px; }
+.roster .cell{ flex:1; background:var(--panel); padding:14px 16px; text-align:center; }
+.roster .cell .v{ font-family:'Inter', sans-serif; font-size:20px; font-weight:700; color:var(--yellow); }
+.roster .cell .l{ font-family:'Inter', sans-serif; font-size:10px; color:var(--chalk-faint); text-transform:uppercase; letter-spacing:.06em; margin-top:3px; }
+
+/* ---------- CHECKLIST ---------- */
+.check-item{ font-size:14.5px; color:var(--chalk-dim); margin-bottom:9px; }
+.check-item .mark{ color:var(--yellow); font-weight:700; margin-right:8px; }
+
+/* ---------- ABOUT GRID ---------- */
+.about-grid{ display:flex; gap:40px; flex-wrap:wrap; }
+.about-text{ flex:1.6; min-width:280px; }
+.about-checks{ flex:1; min-width:220px; }
+.about-text p{ font-size:16px; }
+
+/* ---------- SKILLS ---------- */
+.skills-grid{ display:grid; grid-template-columns:repeat(4, 1fr); gap:10px; }
+.skill-tile{
+    background:var(--panel);
+    border:1px solid var(--rule);
+    border-radius:9px;
+    padding:12px 14px;
+    font-family:'Inter', sans-serif;
+    font-size:12.5px;
+    font-weight:500;
+    color:var(--chalk);
+    text-align:center;
+}
+.skill-tile .tick{ color:var(--yellow); margin-right:6px; }
+
+/* ---------- EXPERIENCE CARDS ---------- */
+.exp-grid{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.exp-card{
+    background:white;
+    border:1px solid #E2E8F0;
+    box-shadow:0 10px 30px rgba(15,23,42,.08);
+    border-radius:10px;
+    padding:16px 18px;
+    overflow:hidden;
+}
+.exp-card .role{ font-family:'Inter', sans-serif; font-weight:700; color:var(--chalk); font-size:15.5px; }
+.exp-card .place{ font-family:'Inter', sans-serif; font-size:11.5px; color:var(--chalk-faint); margin:2px 0 6px; }
+.exp-card .term{ font-family:'Inter', sans-serif; font-size:11px; font-weight:600; color:var(--yellow); float:right; }
+.exp-card .desc{ font-size:13.5px; color:var(--chalk-dim); margin-top:6px; }
+
+/* ---------- PROJECT ---------- */
+.project-card{
+    background:var(--panel);
+    border:1.5px dashed var(--rule);
+    border-radius:14px;
+    padding:30px 32px;
+}
+.project-head{ display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin-bottom:10px; }
+.project-head h3{ font-family:'Inter', sans-serif; font-size:24px; font-weight:800; color:var(--chalk); margin:0; }
+.project-badge{
+    font-family:'Inter', sans-serif; font-size:10px; font-weight:600; color:var(--yellow);
+    border:1px solid var(--yellow); border-radius:20px; padding:3px 10px;
+}
+.project-card p{ max-width:640px; font-size:15px; }
+.feature-tag{
+    display:inline-block; font-size:13.5px; color:var(--chalk-dim);
+    margin:4px 14px 4px 0;
+}
+.feature-tag .tick{ color:var(--yellow); margin-right:6px; }
+.tech-chip{
+    display:inline-block;
+    font-family:'Inter', sans-serif; font-size:11px; font-weight:600; color:var(--blue);
+    background:rgba(37,99,235,0.08); border:1px solid rgba(37,99,235,0.3);
+    border-radius:5px; padding:4px 10px; margin:4px 6px 0 0;
+}
+
+/* ---------- CERTIFICATES ---------- */
+.cert-grid{ display:grid; grid-template-columns:repeat(2, 1fr); gap:14px; }
+.cert-card{
+    background:white;
+    border:1px solid #E2E8F0;
+    box-shadow:0 10px 30px rgba(15,23,42,.08);
+    border-radius:10px;
+    padding:18px 20px;
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+}
+.cert-card .cert-title{ font-family:'Inter', sans-serif; font-weight:700; color:var(--chalk); font-size:15.5px; }
+.cert-card .cert-issuer{ font-family:'Inter', sans-serif; font-size:11.5px; color:var(--chalk-faint); }
+.cert-card .cert-date{ font-family:'Inter', sans-serif; font-size:11px; font-weight:600; color:var(--yellow); }
+.cert-card .cert-desc{ font-size:13.5px; color:var(--chalk-dim); margin-top:2px; }
+
+/* ---------- CONTACT ---------- */
+.section p.contact-lead{ max-width:520px; margin-bottom:18px; font-size:15px; }
+.note-card{
+    font-family:'Inter', sans-serif;
+    background:var(--panel);
+    border:1.5px dashed var(--chalk-faint);
+    border-radius:12px;
+    padding:26px 30px;
+    max-width:560px;
+}
+.note-row{ font-size:14px; margin-bottom:10px; }
+.note-row .k{ color:var(--coral); display:inline-block; width:80px; font-weight:600; }
+
+/* ---------- FOOTER ---------- */
+.chalk-ledge{
+    background:var(--board-2);
+    color:var(--chalk-faint);
+    font-family:'Inter', sans-serif;
+    font-size:11px;
+    display:flex; justify-content:space-between;
+    padding:14px 26px;
+    border-radius:10px;
+    margin-top:20px;
+    max-width:1100px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+@media (max-width: 720px){
+    .skills-grid{ grid-template-columns:repeat(2, 1fr); }
+    .exp-grid{ grid-template-columns:1fr; }
+    .cert-grid{ grid-template-columns:1fr; }
+    .chalk-ledge, .syllabus{ flex-direction:column; align-items:flex-start; }
+}
+</style>
+</head>
+<body>
+
+
+
+<!-- NAV -->
+<nav class="syllabus">
+  <a href="#hero"><span class="n"></span>Home</a>
+  <a href="#about"><span class="n"></span>About</a>
+  <a href="#skills"><span class="n"></span>Skills</a>
+  <a href="#experience"><span class="n"></span>Experience</a>
+  <a href="#project"><span class="n"></span>Project</a>
+  <a href="#certificates"><span class="n"></span>Certificates</a>
+  <a href="#contact"><span class="n"></span>Contact</a>
+</nav>
+
+<div class="block-container">
+
+  <!-- HERO -->
+  <div id="hero"></div>
+  <div class="hero-wrap">
+    <div class="hero-text">
+      <div class="hero-eyebrow">HELLO, I'M</div>
+      <div class="hero-name">Mandisa Lihle Sithole</div>
+      <div class="hero-role">Aspiring Software Developer &amp; Final-Year IT Student</div>
+      <p>
+        I design and develop modern software solutions using Python, Java, C#, SQL
+        and Artificial Intelligence. Currently completing my Bachelor of Science
+        in Information Technology at North-West University, while gaining
+        practical experience in tutoring, software development and digital-skills
+        training.
+      </p>
+      <div class="roster">
+        <div class="cell"><div class="v">BSc IT</div><div class="l">Degree</div></div>
+        <div class="cell"><div class="v">04</div><div class="l">Languages</div></div>
+        <div class="cell"><div class="v">04</div><div class="l">Roles</div></div>
+        <div class="cell"><div class="v">2027</div><div class="l">Graduating</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <div id="about"></div>
+  <div class="section">
+    <div class="section-title">About me</div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>
+          I'm Mandisa Lihle Sithole, a passionate final-year Information Technology
+          student at North-West University. I enjoy solving real-world problems
+          through technology, building intelligent applications, and continuously
+          learning new tools and languages.
+          <br><br>
+          My goal is to become a software developer creating innovative software
+          that positively impacts people and businesses — work I've already started
+          practising through tutoring, mentoring, and hands-on projects.
+        </p>
+      </div>
+      <div class="about-checks">
+        <div class="check-item"><span class="mark">✓</span>SOC</div>
+        <div class="check-item"><span class="mark">✓</span>Software Engineering</div>
+        <div class="check-item"><span class="mark">✓</span>Data Analytics</div>
+        <div class="check-item"><span class="mark">✓</span>Cloud Computing</div>
+        <div class="check-item"><span class="mark">✓</span>Web Development</div>
+        <div class="check-item"><span class="mark">✓</span>Machine Learning</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SKILLS -->
+  <div id="skills"></div>
+  <div class="section">
+    <div class="section-title">Skillset</div>
+    <div class="skills-grid">
+      <div class="skill-tile"><span class="tick">✓</span>Python</div>
+      <div class="skill-tile"><span class="tick">✓</span>Java</div>
+      <div class="skill-tile"><span class="tick">✓</span>C#</div>
+      <div class="skill-tile"><span class="tick">✓</span>C++</div>
+      <div class="skill-tile"><span class="tick">✓</span>SQL</div>
+      <div class="skill-tile"><span class="tick">✓</span>Data Structures</div>
+      <div class="skill-tile"><span class="tick">✓</span>GitHub</div>
+      <div class="skill-tile"><span class="tick">✓</span>Artificial Intelligence</div>
+      <div class="skill-tile"><span class="tick">✓</span>Gen AI for Software Developers</div>
+      <div class="skill-tile"><span class="tick">✓</span>Computer Networking</div>
+    </div>
+  </div>
+
+  <!-- EXPERIENCE -->
+  <div id="experience"></div>
+  <div class="section">
+    <div class="section-title">Experience</div>
+    <div class="exp-grid">
+      <div class="exp-card">
+        <span class="term">2024 - 2026</span>
+        <div class="role">Statistics Tutor</div>
+        <div class="place">North-West University</div>
+        <div class="desc">Helped undergraduate students understand Statistics through structured tutoring sessions.</div>
+      </div>
+      <div class="exp-card">
+        <span class="term">2025</span>
+        <div class="role">Computer Skills Assistant</div>
+        <div class="place">Ikateleng Project, NWU</div>
+        <div class="desc">Supported matriculants in building foundational computer literacy for tertiary study.</div>
+      </div>
+      <div class="exp-card">
+        <span class="term">2025 – 2026</span>
+        <div class="role">Supplemental Instruction Facilitator</div>
+        <div class="place">North-West University</div>
+        <div class="desc">Ran structured SI sessions to help students work through complex academic material.</div>
+      </div>
+      <div class="exp-card">
+        <span class="term">Part-time</span>
+        <div class="role">Cashier</div>
+        <div class="place">Shoprite</div>
+        <div class="desc">Handled high-volume transactions with accuracy across cash, card and voucher payments.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECT -->
+  <div id="project"></div>
+  <div class="section">
+    <div class="section-title">Featured project</div>
+    <div class="project-card">
+      <div class="project-head">
+        <h3>Mathematics Tutor Program</h3>
+        <span class="project-badge">DESKTOP APP</span>
+      </div>
+      <p>
+        A desktop application built to help learners improve their mathematics
+        skills through interactive practice, instant feedback, and clear tracking
+        of progress over time.
+      </p>
+      <div>
+        <span class="feature-tag"><span class="tick">✔</span>Practice mathematics</span>
+        <span class="feature-tag"><span class="tick">✔</span>Receive instant feedback</span>
+        <span class="feature-tag"><span class="tick">✔</span>Improve problem solving</span>
+        <span class="feature-tag"><span class="tick">✔</span>Track learning progress</span>
+      </div>
+      <div style="margin-top:14px;">
+        <span class="tech-chip">Python</span>
+        <span class="tech-chip">Object-Oriented Programming</span>
+        <span class="tech-chip">File Handling</span>
+        <span class="tech-chip">Algorithms</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CERTIFICATES -->
+  <div id="certificates"></div>
+  <div class="section">
+    <div class="section-title">Certificates</div>
+    <div class="cert-grid">
+      <div class="cert-card">
+        <span class="cert-date">APRIL 2026</span>
+        <div class="cert-title">Certificate of Participation — SANCS</div>
+        <div class="cert-issuer">The Hague Centre for Strategic Studies · Stellenbosch University · Ministry of Foreign Affairs · MixORG</div>
+        <div class="cert-desc">Awarded for successful completion of the 3rd Edition of the Southern Africa – Netherlands Cyber Security School.</div>
+      </div>
+      <div class="cert-card">
+        <span class="cert-date">APRIL 2026</span>
+        <div class="cert-title">Certificate of Attendance — SANCS</div>
+        <div class="cert-issuer">The Hague Centre for Strategic Studies · Stellenbosch University · Ministry of Foreign Affairs · MixORG</div>
+        <div class="cert-desc">Recognises attendance at the 3rd Edition of the Southern Africa – Netherlands Cyber Security School.</div>
+      </div>
+      <div class="cert-card">
+        <span class="cert-date">FEBRUARY 2026</span>
+        <div class="cert-title">GenAI Course for Software Engineers</div>
+        <div class="cert-issuer">WeThinkCode_</div>
+        <div class="cert-desc">Certificate of completion for the WeThinkCode_ GenAI Course for Software Engineers.</div>
+      </div>
+      <div class="cert-card">
+        <span class="cert-date">CAREER ESSENTIALS</span>
+        <div class="cert-title">Career Essentials in Cybersecurity</div>
+        <div class="cert-issuer">Ikamva Digital · Microsoft Elevate</div>
+        <div class="cert-desc">Completed the Career Essentials in Cybersecurity programme covering foundational security skills.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div id="contact"></div>
+  <div class="section">
+    <div class="section-title">Contact and Profile Information</div>
+    <p class="contact-lead">
+      I'm actively looking for graduate developer roles and internships.
+      Email or phone is the fastest way to reach me — happy to send my full CV
+      or walk through the project above.
+    </p>
+    <div class="note-card">
+      <div class="note-row"><span class="k">email</span><a href="mailto:mandisasithol17@gmail.com">mandisasithol17@gmail.com</a></div>
+      <div class="note-row"><span class="k">phone</span><a href="tel:+27646167675">+27 646 167 675</a></div>
+      <div class="note-row"><span class="k">github</span><a href="https://github.com/MandisaLihle" target="_blank">github.com/MandisaLihle</a></div>
+      <div class="note-row"><span class="k">linkedin</span><a href="https://linkedin.com/in/mandisa-sithole-6b5969261/" target="_blank">linkedin.com/in/mandisa-sithole-6b5969261</a></div>
+      <div class="note-row"><span class="k">location</span><span>Johannesburg, South Africa</span></div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
